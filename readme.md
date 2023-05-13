@@ -86,6 +86,8 @@ pip install git+https://github.com/RimoChan/chao.git
 
 - 只能优化延迟，不能优化CPU。即使平均到每一次执行，占用的CPU时间都是更多的。
 
+- 由于各种各样的原因，实际上有可能反而变慢。
+
 
 ## 结束
 
