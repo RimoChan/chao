@@ -11,7 +11,7 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     url='https://github.com/RimoChan/chao',
     packages=[
-        'chao',
+        '超',
     ],
     package_data={},
     classifiers=[
