@@ -84,3 +84,12 @@ t = time.time()
 assert f8(4) == [4, 5, 6]
 assert time.time() - t < 1.1
 print('f8 pass')
+
+
+@超
+def f9(x):
+    if x <= 1:
+        return x
+    return f9(x-1) + f9(x-2)
+assert f9(13) == 233
+print('f9 pass')

@@ -19,7 +19,7 @@ _易位 = {
     '__pow__': '__rpow__'
 }
 
-_pool = ThreadPoolExecutor(128)
+_pool = ThreadPoolExecutor(2**31)
 
 def 用(x):
     if isinstance(x, list):
