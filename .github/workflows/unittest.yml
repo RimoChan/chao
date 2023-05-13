@@ -1,0 +1,43 @@
+name: CI
+on:
+  push:
+    branches: [ slave ]
+  pull_request:
+    branches: [ slave ]
+jobs:
+  unittest_38:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.8"
+      - name: unittest
+        run: python test.py
+  unittest_39:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.8"
+      - name: unittest
+        run: python test.py
+  unittest_310:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+      - name: unittest
+        run: python test.py
+  unittest_311:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
+      - name: unittest
+        run: python test.py
