@@ -5,6 +5,15 @@ on:
   pull_request:
     branches: [ slave ]
 jobs:
+  unittest_37:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.7"
+      - name: unittest
+        run: python test.py
   unittest_38:
     runs-on: ubuntu-latest
     steps:
