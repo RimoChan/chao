@@ -75,10 +75,13 @@ class 符号:
                 raise ValueError(f'<符号 {self._名字}>未定义。')
             a, method, li, d = self._来源
             _批量解引用([i for i in (li + tuple(d.values()) + (a, ))])
-            self._引用 = getattr(用(a), method)(*[用(i) for i in li], **{k: 用(v) for k, v in d.items()})
+            用a = 用(a)
+            # self._引用 = getattr(用a, method)(*[用(i) for i in li], **{k: 用(v) for k, v in d.items()})
+            self._引用 = getattr(用a.__class__, method)(用a, *[用(i) for i in li], **{k: 用(v) for k, v in d.items()})
             if self._引用 is NotImplemented and method in _易位:
                 assert len(li) == 1 and not d
-                self._引用 = getattr(用(li[0]), _易位[method])(用(a))
+                用li0 = 用(li[0])
+                self._引用 = getattr(用li0.__class__, _易位[method])(用li0, 用a)
             assert not isinstance(self._引用, 符号), f'解引用{显现(self)}出现了问题 (调用{method}，输入{显现(li)} {显现(d)})。'
     def __index__(self):
         self._解引用()

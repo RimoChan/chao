@@ -93,3 +93,16 @@ def f9(x):
     return f9(x-1) + f9(x-2)
 assert f9(13) == 233
 print('f9 pass')
+
+
+class C:
+    def __init__(self, a: int):
+        self._a = a
+    def __call__(self, b: int) -> int:
+        return self._a + b
+@超
+def f10(x, y):
+    c = C(x)
+    return c(y)
+assert f10(1, 2) == 3
+print('f10 pass')
